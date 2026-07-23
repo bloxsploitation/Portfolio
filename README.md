@@ -1,13 +1,6 @@
-# Magnetic 3D Grid Interaction with Content Preview
+# Portfolio
 
-A grid layout with a magnetic 3D hover effect and a content preview animation.
-
-![Magnetic 3D Grid Interaction with Content Preview](https://tympanus.net/codrops/wp-content/uploads/2021/04/3DGridContentPreview.jpg)
-
-[Article on Codrops](https://tympanus.net/codrops/?p=54253)
-
-[Demo](http://tympanus.net/Development/3DGridContentPreview/)
-
+A portfolio site built from a 3D grid content preview demo.
 
 ## Installation
 
@@ -17,27 +10,23 @@ Install dependencies:
 npm install
 ```
 
-Compile the code for development and start a local server:
+Start development:
 
 ```
 npm start
 ```
 
-Create the build:
+Build for production:
 
 ```
 npm run build
 ```
 
-## Credits
+Deploy to GitHub Pages:
 
-- Images from [Unsplash.com](https://unsplash.com)
-
-## Misc
-
-Follow Codrops: [Twitter](http://www.twitter.com/codrops), [Facebook](http://www.facebook.com/codrops), [GitHub](https://github.com/codrops), [Instagram](https://www.instagram.com/codropsss/)
+```
+npm run deploy
+```
 
 ## License
 [MIT](LICENSE)
-
-Made with :blue_heart: by [Codrops](http://www.codrops.com)
