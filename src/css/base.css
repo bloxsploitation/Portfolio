@@ -317,12 +317,15 @@ a:focus {
 	margin: 0 auto;
 	padding: 0 5vw;
 	display: grid;
+	grid-gap: 1.5rem;
 	grid-template-rows: auto auto auto;
 	grid-template-columns: 50% 50%;
 	grid-template-areas: 
 	'preview-back preview-back' 
 	'preview-img preview-title' 
 	'preview-content preview-content';
+	overflow-y: auto;
+	max-height: 100vh;
 }
 
 .js .preview__item {
@@ -366,8 +369,8 @@ a:focus {
 }
 
 .preview__item-imgwrap {
-	width: 100px;
-	height: 150px;
+	width: 100%;
+	min-height: 320px;
 	border-radius: 10px;
 	overflow: hidden;
 	grid-area: preview-img;
@@ -383,9 +386,9 @@ a:focus {
 
 .preview__item-content {
 	grid-area: preview-content;
-	max-width: calc(1100px - 80vh);
-	min-height: 440px;
-	line-height: 1.3;
+	max-width: none;
+	min-height: auto;
+	line-height: 1.45;
 }
 
 .preview__item-meta {
@@ -425,6 +428,44 @@ a:focus {
 .preview__item-button:focus {
 	outline: none;
 	background: var(--color-link);
+}
+
+.preview__item-gallery {
+	margin: 2rem 0 1rem;
+}
+
+.preview__item-gallery h3 {
+	margin: 0 0 1rem;
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	color: var(--color-text);
+}
+
+.preview__item-gallery-items {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 0.75rem;
+}
+
+.preview__item-gallery-items img {
+	width: 100%;
+	height: 140px;
+	object-fit: cover;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 2px solid transparent;
+	transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.preview__item-gallery-items img:hover {
+	transform: scale(1.03);
+	border-color: var(--color-link);
+}
+
+.preview__item-gallery-item--active {
+	border-color: var(--color-link);
+	opacity: 0.85;
 }
 
 .cursor {
@@ -516,6 +557,35 @@ a:focus {
 	}
 	.preview__item-content {
 		padding: 0 0 0 4rem;
+	}
+}
+
+@media screen and (max-width: 52em) {
+	.preview__item {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto 1fr;
+		grid-template-areas:
+			'preview-back'
+			'preview-img'
+			'preview-title'
+			'preview-content';
+		padding: 1.5rem;
+	}
+
+	.preview__item-title {
+		padding-left: 0;
+	}
+
+	.preview__item-imgwrap {
+		min-height: 320px;
+	}
+
+	.preview__item-content {
+		padding: 1rem 0 2rem;
+	}
+
+	.preview__item-gallery-items {
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 	}
 }
 

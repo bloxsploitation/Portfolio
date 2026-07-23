@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/codrops/3DGridContentPreview.git"
+    "url": "https://github.com/bloxsploitation/Portfolio.git"
   },
   "keywords": [],
   "author": "Codrops",
   "license": "MIT",
-  "homepage": "https://<YOUR-USERNAME>.github.io/portfolio",
+  "homepage": "https://bloxsploitation.github.io/Portfolio",
   "bugs": {
     "url": "https://github.com/codrops/3DGridContentPreview/issues"
   },

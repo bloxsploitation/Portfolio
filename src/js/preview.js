@@ -9,6 +9,8 @@ export class Preview {
         // image elements (outer and inner)
         this.DOM.imgWrap = this.DOM.el.querySelector('.preview__item-imgwrap');
         this.DOM.image = this.DOM.imgWrap.querySelector('.preview__item-img');
+        // gallery thumbnails
+        this.DOM.galleryItems = [...this.DOM.el.querySelectorAll('.preview__item-gallery-items img')];
         // title
         this.DOM.title = this.DOM.el.querySelector('.preview__item-title');
         // Splitting will run on the title element
@@ -19,6 +21,9 @@ export class Preview {
 
         // initial styles
         this.init();
+
+        // gallery click behaviour
+        this.initGallery();
     }
     // let's set the initial styles
     // all elements inside the preview will be hidden so we can animate them in after clicking on a grid item
@@ -35,5 +40,17 @@ export class Preview {
 
         // hide content
         gsap.set(this.DOM.content, {opacity: 0});
+    }
+
+    initGallery() {
+        if ( !this.DOM.galleryItems.length ) return;
+        this.DOM.galleryItems.forEach(img => {
+            img.addEventListener('click', () => {
+                const src = img.getAttribute('src');
+                this.DOM.image.style.backgroundImage = `url(${src})`;
+                this.DOM.galleryItems.forEach(item => item.classList.remove('preview__item-gallery-item--active'));
+                img.classList.add('preview__item-gallery-item--active');
+            });
+        });
     }
 }
