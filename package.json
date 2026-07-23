@@ -6,7 +6,9 @@
     "start": "parcel src/index.html --open",
     "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
     "build:parcel": "parcel build src/index.html --public-url ./",
-    "build": "npm run clean && npm run build:parcel"
+    "build": "npm run clean && npm run build:parcel",
+    "predeploy": "npm run build",
+    "deploy": "npx gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -15,7 +17,7 @@
   "keywords": [],
   "author": "Codrops",
   "license": "MIT",
-  "homepage": "[HOMEPAGE]",
+  "homepage": "https://<YOUR-USERNAME>.github.io/portfolio",
   "bugs": {
     "url": "https://github.com/codrops/3DGridContentPreview/issues"
   },
@@ -26,6 +28,7 @@
     "splitting": "^1.0.6"
   },
   "devDependencies": {
-    "events": "^3.3.0"
+    "events": "^3.3.0",
+    "gh-pages": "^6.3.0"
   }
 }
