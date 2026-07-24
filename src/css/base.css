@@ -325,7 +325,7 @@ a:focus {
 	'preview-back preview-back' 
 	'preview-img preview-title' 
 	'preview-content preview-content';
-	overflow-y: auto;
+	overflow: visible;
 	max-height: 100vh;
 }
 
